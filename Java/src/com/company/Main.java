@@ -8,8 +8,8 @@ package com.company;
 *         operation is conducted. If the number is even, then the modulus
 *         value will be 0. If its odd, then a modulus value is 1.
 *       - Depending on the modulus value, the current num is added to evenTotal or oddTotal.
-*       - Based on prompt, a positive value must be returned. In the return statement we compare
-*         evenTotal to oddTotal. Which ever is smaller we use to subtract from the other.
+*       - Based on prompt, a positive value must be returned. I used Math.abs() which will always return
+*         a positive difference value.
 * */
 public class Main {
 
@@ -27,6 +27,7 @@ public class Main {
     private static int warOfNumbers(Integer[] integers){
         int evenTotal = 0;
         int oddTotal = 0;
+
         for(int num : integers){
             if(num % 2 == 0){
                 evenTotal += num;
@@ -35,6 +36,6 @@ public class Main {
             }
         }
 
-        return evenTotal > oddTotal ? (evenTotal - oddTotal) : (oddTotal - evenTotal);
+        return Math.abs(evenTotal-oddTotal);
     }
 }
